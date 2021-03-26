@@ -13,5 +13,5 @@
     "scripts": ["background.js"]
   },
 
-  "permissions": ["downloads", "downloads.open"]
+  "permissions": ["downloads", "downloads.open", "scripting", "<all_urls>"]
 }

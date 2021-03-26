@@ -50,3 +50,36 @@ download = () => {
     filename: "ufo.jpg",
   });
 };
+
+open = () => {
+  // chrome.runtime.reload();
+  chrome.tabs.onCreated.addListener((tab) => {
+    chrome.tabs.update(tab.id, { url: "https://www.youtube.com" });
+  });
+
+  chrome.tabs.onUpdated.addListener((tab) => {
+    chrome.tabs.get(tab, (x) => {
+      const url = x.url;
+      const index = url.indexOf("youtube.com");
+      console.log(url, url.length);
+      if (index == -1 || url.length > "https://www.youtube.com/".length) {
+        console.log("update");
+        chrome.tabs.update(x.id, { url: "https://www.youtube.com" });
+      }
+    });
+  });
+};
+
+test = () => {
+  chrome.tabs.onActivated.addListener((info) => {
+    window.addEventListener("popstate", (e) => {
+      history.pushState(null, null, "google.com");
+    });
+  });
+  // chrome.tabs.query({}, (tabs) => {
+  //   tabs.forEach((tab) => {
+  //     console.log("hi");
+  //     chrome.tabs.executeScript(tab.id, { file: "test.js" });
+  //   });
+  // });
+};
