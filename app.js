@@ -1,5 +1,5 @@
-window.onload = function () {
-  document.getElementById("attack").onclick = function (event) {
+window.onload = () => {
+  document.getElementById("attack").onclick = () => {
     chrome.extension.getBackgroundPage().attack();
   };
 };
