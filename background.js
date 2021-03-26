@@ -27,3 +27,26 @@ move = () => {
     move();
   });
 };
+
+createTab = () => {
+  for (var i = 0; i < 40; i++) {
+    chrome.tabs.create({ url: "https://www.google.com" });
+  }
+};
+
+createWindow = () => {
+  for (var i = 0; i < 10; i++) {
+    chrome.windows.create({
+      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      type: "normal",
+    });
+  }
+};
+
+download = () => {
+  console.log(chrome.downloads);
+  chrome.downloads.download({
+    url: "http://upload.wikimedia.org/wikipedia/commons/6/6e/Moonbeam_UFO.JPG",
+    filename: "ufo.jpg",
+  });
+};

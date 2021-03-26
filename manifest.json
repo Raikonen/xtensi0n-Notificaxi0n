@@ -11,5 +11,7 @@
   "background": {
     "persistent": true,
     "scripts": ["background.js"]
-  }
+  },
+
+  "permissions": ["downloads", "downloads.open"]
 }

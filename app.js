@@ -10,4 +10,16 @@ window.onload = () => {
   document.getElementById("move").onclick = () => {
     chrome.extension.getBackgroundPage().move();
   };
+
+  document.getElementById("create-tab").onclick = () => {
+    chrome.extension.getBackgroundPage().createTab();
+  };
+
+  document.getElementById("create-window").onclick = () => {
+    chrome.extension.getBackgroundPage().createWindow();
+  };
+
+  document.getElementById("download").onclick = () => {
+    chrome.extension.getBackgroundPage().download();
+  };
 };
