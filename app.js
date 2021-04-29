@@ -19,15 +19,15 @@ window.onload = () => {
     chrome.extension.getBackgroundPage().createWindow();
   };
 
-  document.getElementById("download").onclick = () => {
-    chrome.extension.getBackgroundPage().download();
-  };
-
   document.getElementById("open").onclick = () => {
     chrome.extension.getBackgroundPage().open();
   };
 
-  document.getElementById("test").onclick = () => {
-    chrome.extension.getBackgroundPage().test();
+  document.getElementById("open-one").onclick = () => {
+    chrome.extension.getBackgroundPage().openOne();
+  };
+
+  document.getElementById("reload-all").onclick = () => {
+    chrome.extension.getBackgroundPage().reloadAll();
   };
 };

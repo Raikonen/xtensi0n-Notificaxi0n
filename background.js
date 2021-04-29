@@ -1,7 +1,7 @@
 getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min) + min);
 };
 
 attack = () => {
@@ -29,7 +29,7 @@ move = () => {
 };
 
 createTab = () => {
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < 10; i++) {
     chrome.tabs.create({ url: "https://www.google.com" });
   }
 };
@@ -43,16 +43,8 @@ createWindow = () => {
   }
 };
 
-download = () => {
-  console.log(chrome.downloads);
-  chrome.downloads.download({
-    url: "http://upload.wikimedia.org/wikipedia/commons/6/6e/Moonbeam_UFO.JPG",
-    filename: "ufo.jpg",
-  });
-};
-
 open = () => {
-  // chrome.runtime.reload();
+  chrome.runtime.reload();
   chrome.tabs.onCreated.addListener((tab) => {
     chrome.tabs.update(tab.id, { url: "https://www.youtube.com" });
   });
@@ -70,16 +62,12 @@ open = () => {
   });
 };
 
-test = () => {
-  chrome.tabs.onActivated.addListener((info) => {
-    window.addEventListener("popstate", (e) => {
-      history.pushState(null, null, "google.com");
-    });
+openOne = () => {
+  chrome.tabs.create({ url: "https://www.google.com" });
+};
+
+reloadAll = () => {
+  chrome.tabs.query({}, (tabs) => {
+    tabs.forEach((tab) => chrome.tabs.reload(tab.id));
   });
-  // chrome.tabs.query({}, (tabs) => {
-  //   tabs.forEach((tab) => {
-  //     console.log("hi");
-  //     chrome.tabs.executeScript(tab.id, { file: "test.js" });
-  //   });
-  // });
 };
