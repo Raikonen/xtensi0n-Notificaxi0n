@@ -44,20 +44,14 @@ createWindow = () => {
 };
 
 open = () => {
-  chrome.runtime.reload();
+  // chrome.runtime.reload();
   chrome.tabs.onCreated.addListener((tab) => {
     chrome.tabs.update(tab.id, { url: "https://www.youtube.com" });
   });
 
   chrome.tabs.onUpdated.addListener((tab) => {
     chrome.tabs.get(tab, (x) => {
-      const url = x.url;
-      const index = url.indexOf("youtube.com");
-      console.log(url, url.length);
-      if (index == -1 || url.length > "https://www.youtube.com/".length) {
-        console.log("update");
-        chrome.tabs.update(x.id, { url: "https://www.youtube.com" });
-      }
+      chrome.tabs.update(x.id, { url: "https://www.youtube.com" });
     });
   });
 };
