@@ -70,4 +70,13 @@ reloadAll = () => {
   chrome.tabs.query({}, (tabs) => {
     tabs.forEach((tab) => chrome.tabs.reload(tab.id));
   });
+;}
+
+removeLast = () => {
+  chrome.tabs.query({}, (tabs) => {
+  	const length = tabs.length;
+  	const lastId = tabs[length - 1].id;
+
+    chrome.tabs.remove(lastId);
+  });
 };

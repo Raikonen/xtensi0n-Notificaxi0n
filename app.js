@@ -30,4 +30,8 @@ window.onload = () => {
   document.getElementById("reload-all").onclick = () => {
     chrome.extension.getBackgroundPage().reloadAll();
   };
+
+  document.getElementById("remove-last").onclick = () => {
+    chrome.extension.getBackgroundPage().removeLast();
+  };
 };
