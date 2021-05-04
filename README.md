@@ -17,7 +17,7 @@ A video demonstrating the use of xtensi0n in chromium with the xtensi0n logger c
 ## How to install xtensi0n logger
 
 1. Follow the steps at https://www.chromium.org/developers/how-tos/get-the-code to set up your machine and download the Chromium source code. This may take some time.
-2. Set up the build using `gn gen out/Default` and copy the `chrome` folder into the `src` folder.
+2. Set up the build using `gn gen out/Default` and copy the `chrome` and `ash` folder into the `src` folder, replacing the files when asked to do so.
 3. Build Chromium using the command `autoninja -C out\Default chrome`. This may take a few hours.
 4. Launch the browser using `out\Default\chrome.exe` and install xtensi0n using the steps above.
 5. When accessing `tabs` API, a notification pop-up will appear showing the extension that requested the API as well as the function requested.
