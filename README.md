@@ -1,6 +1,10 @@
 # xtensi0n
 CS5331 Term Project
 
+## Video
+ 
+A video demonstrating the use of xtensi0n in chromium with the xtensi0n logger can be found in `video.mp4`.
+
 
 ## How to install xtensi0n
 
