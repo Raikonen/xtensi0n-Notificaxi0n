@@ -3,7 +3,7 @@ CS5331 Term Project
 
 ## Video
  
-A video demonstrating the use of xtensi0n in chromium with the xtensi0n logger can be found in `video.mp4`.
+A video demonstrating the use of xtensi0n in chromium with the real-time monitoring system notificaxi0n can be found in `video.mp4`.
 
 
 ## How to install xtensi0n
@@ -14,7 +14,7 @@ A video demonstrating the use of xtensi0n in chromium with the xtensi0n logger c
 4. xtensi0n should be installed and there will be a custom new tab page to run xtensi0n functions
 
 
-## How to install xtensi0n logger
+## How to install notificaxi0n in Chromium
 
 1. Follow the steps at https://www.chromium.org/developers/how-tos/get-the-code to set up your machine and download the Chromium source code. This may take some time.
 2. Set up the build using `gn gen out/Default` and copy the `chrome` and `ash` folder into the `src` folder, replacing the files when asked to do so.
